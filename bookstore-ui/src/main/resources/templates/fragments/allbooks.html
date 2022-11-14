@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="booksCard" class="row">
+  <div class="col-md-4" th:each="book : ${books}">
+    <div class="card mb-3" style="width: 20rem ">
+      <img th:src="${book.imageURL}"  width="400" height="300" class="card-img-top" alt="">
+      <div class="card-body">
+        <h3 class="card-title" th:text="${book.title}">  </h3>
+          <p class="card-text" th:text="${book.authorName}"></p>
+          <p class="card-text" th:text="${book.genre}"></p>
+          <p class="card-text" th:text="${book.publisher}"></p>
+
+      </div>
+      <div class="card-footer">
+        <div class="justify-content-between d-flex mb-3">
+          <span class="badge badge-pill badge-info p-3" th:text="${book.prices}"></span>
+          <a th:href="@{'/bookstore/book/'+ ${book.id}}" class="btn btn-outline-info">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

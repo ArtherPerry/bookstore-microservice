@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<table th:fragment="cartView" class="table table-striped">
+  <thead class="thead-dark">
+  <tr>
+    <th>Title</th>
+    <th>AuthorName</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="book : ${books}">
+    <td th:text="${book.title}"></td>
+    <td th:text="${book.authorName}"></td>
+    <td class="col-md-1" >
+      <input th:if="${book.itemCount != null}" type="text" class="form-control"  th:placeholder="${book.itemCount}" min="1" max="5">
+
+      <input th:if="${book.itemCount == null}" type="text" class="form-control"  th:field="*{quantity}" min="1" max="5">
+    </td>
+    <td th:text="${book.prices} + ' $'"></td>
+    <td><a th:href="@{'/bookstore/book/delete/' + ${book.id}}" class="btn btn-outline-danger">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

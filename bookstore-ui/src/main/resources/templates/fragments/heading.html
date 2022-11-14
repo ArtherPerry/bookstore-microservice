@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+  <div th:fragment="heading">
+    <style>
+      #photo{
+        background: url("https://source.unsplash.com/random/?book");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        min-height: 600px;
+        background-attachment: fixed;
+      }
+    </style>
+  <div class="jumbotron jumbotron-fluid text-center text-white d-flex justify-content-center align-items-center" id="photo">
+    <div  class="container">
+      <h1 class="display-3"> Amazing Book Store</h1>
+      <p class="lead my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem, dignissimos dolorem eos facere id impedit incidunt numquam perferendis placeat quos repudiandae saepe ut. Blanditiis delectus eum officia rem reprehenderit!</p>
+      <a href="#" class="rounded-pill px-4 py-2 mt-5 " >Search Books</a>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
